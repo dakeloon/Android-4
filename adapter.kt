@@ -10,7 +10,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
 class ColorAdapter(private val context: Context,
-              private val list: ArrayList<MainActivity.ColorData>,
+              private val list: ArrayList<ColorData>,
               private val cellClickListener: CellClickListener
 ) : RecyclerView.Adapter<ColorAdapter.ViewHolder>() {
 
@@ -35,10 +35,13 @@ class ColorAdapter(private val context: Context,
         holder.view.setOnClickListener {
             cellClickListener.onCellClickListener(context, data)
         }
+        holder.text.setOnClickListener{
+            cellClickListener.onCellClickListener(context, data)
+        }
     }
 
     interface CellClickListener {
-        fun onCellClickListener(context: Context, data: MainActivity.ColorData) {
+        fun onCellClickListener(context: Context, data: ColorData) {
             Toast.makeText(context, "IT`S " + data.colorName, Toast.LENGTH_SHORT).show()
         }
 
