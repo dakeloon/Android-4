@@ -39,8 +39,5 @@ class MainActivity : AppCompatActivity(), ColorAdapter.CellClickListener {
         return list
     }
 
-    data class ColorData(
-        val colorHex: String,
-        val colorName: String
-    )
+
 }
